@@ -1,6 +1,6 @@
 {
   description = "Minimal NixOS installation media";
-  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
+  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
   outputs = {
     self,
     nixpkgs,
@@ -34,10 +34,10 @@
             "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEvPsKWQXX/QsFQjJU0CjG4LllvUVZme45d9JeS/yhLt qaristote@precision-3571"
           ];
 
-          time.time = "Europe/Paris";
+          time.timeZone = "Europe/Paris";
           i18n = {
-            defaultLocal = "fr_FR.utf8";
-            extraLocaleSettings.LANG = "en_US.utf8";
+            defaultLocale = "fr_FR.UTF-8";
+            extraLocaleSettings.LANG = "en_US.UTF-8";
           };
           console = {
             "font" = "Lat2-Terminus32";
