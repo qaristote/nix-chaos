@@ -65,6 +65,12 @@
 
               environment.systemPackages = with pkgs; [
                 vim
+                (pkgs.writeShellApplication "mount-system" { } ''
+                  cryptsetup open /dev/disk/by-uuid/47e77d74-1aad-4d99-9aa7-568d8524b305 crypt
+                  mount /dev/disk/by-uuid/9e447187-fae1-466a-b37d-4de1fe240c6f /mnt
+                  mount /dev/disk/by-uuid/b99733fc-3734-41d3-8fe5-2682714f319e /mnt/boot
+                  swapon /mnt/swap
+                '')
               ];
             }
           )
